@@ -1,0 +1,19 @@
+<a href="/">
+  <h1>URL Shortener</h1>
+</a>
+
+<img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png" alt="">
+<form class="d-flex" action="/shorten" method="POST">
+  <input class="form-control me-2" name="url" type="url" placeholder="Type URL here" aria-label="Url" required>
+  <button class="btn btn-outline-success" type="submit">shorten</button>
+</form>
+<span>Short URL:</span> <span id=shortURL>http://localhost:3000/{{words}}</span><button onclick="copy()">Copy</button>
+
+<script>
+  function copy() {
+    const URL = document.getElementById("shortURL")
+    navigator.clipboard.writeText(URL.innerText)
+      .then(() => alert('copied'))
+      .catch(error => console.log(error))
+  }
+</script>
