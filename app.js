@@ -39,9 +39,7 @@ app.get('/:words', (req, res) => {
     let stringSearchWord = (JSON.stringify(Object.values(searchData[x])))
     modifiedWord = stringSearchWord.replace(/\["(.*)"\]/, '$1')
 
-    console.log(modifiedWord)
     if (modifiedWord === words) {
-      console.log('match  word', modifiedWord)
       let stringSearchLong = (JSON.stringify(Object.keys(searchData[x])))
       modifiedLong = stringSearchLong.replace(/\["(.*)"\]/, '$1')
       res.redirect(modifiedLong);
