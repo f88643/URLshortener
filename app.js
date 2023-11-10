@@ -43,13 +43,10 @@ app.get('/:words', (req, res) => {
       let stringSearchLong = (JSON.stringify(Object.keys(searchData[x])))
       modifiedLong = stringSearchLong.replace(/\["(.*)"\]/, '$1')
       res.redirect(modifiedLong);
-    }
-    else {
-      res.status(404).send('No matched website')
+      return;
     }
   }
-
-
+  res.status(404).send('No matched website')
 })
 
 function shorten(longLink) {
